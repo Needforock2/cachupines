@@ -1,0 +1,17 @@
+.contenedor{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px;
+    background-color: white;
+}
+.count-btn{
+        border-radius: 0px;
+        border: none;
+        font-size: 1.7rem;
+  
+}
+
+.btn-add-cart{
+    background-color: #181cfc;
+}

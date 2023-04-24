@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Wireless Earbuds",
+            "description": "Enjoy your music on the go with these high-quality wireless earbuds.",
+            "price": 49.99,
+            "pictureUrl": "https://example.com/wireless-earbuds.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Smart Watch",
+            "description": "Stay connected and track your fitness with this stylish and functional smart watch.",
+            "price": 129.99,
+            "pictureUrl": "https://example.com/smart-watch.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Gaming Mouse",
+            "description": "Get the precision and control you need to dominate your favorite games with this advanced gaming mouse.",
+            "price": 79.99,
+            "pictureUrl": "https://example.com/gaming-mouse.jpg"
+        },
+        {
+            "id": 4,
+            "title": "High-End Laptop",
+            "description": "Experience the ultimate in computing power and performance with this cutting-edge high-end laptop.",
+            "price": 1999.99,
+            "pictureUrl": "https://example.com/high-end-laptop.jpg"
+        }
+    ]
+}

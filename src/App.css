@@ -25,6 +25,9 @@
   padding: 1rem;
   color: black;
   box-shadow: 2px 3px 8px 2px rgba(0,0,0,0.81);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
 
 }
@@ -43,6 +46,9 @@
 }
 
 .itemListContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 3rem auto;
   background-color: #F0F2F0;
   padding: 3rem;

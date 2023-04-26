@@ -1,8 +1,9 @@
 import React from 'react'
 import './button.css'
+import { NavLink } from 'react-router-dom'
 
 export const Button = ({text}) => {
   return (
-    <div className='btn btn-light bckg-color-primary'>{text}</div>
+    <NavLink className='btn btn-light bckg-color-primary' to={`/category/${text.toLowerCase()}`}>{text}</NavLink>
   )
 }

@@ -4,16 +4,19 @@ import './itemCount.css'
 export function ItemCount ({stock, initial, onAdd}) {
 const[contador, setContador]=useState(initial)
 
+
 const aumentaContador = ()=>{
     if(contador < stock){
         setContador(contador +1)
-     }   
+     } 
+    }  
 const disminuyeContador = ()=>{
     if(contador > 1){
         setContador(contador -1)
     }   
 }
 return (
+    
     <div className='d-grid gap-2'>
            <div className='contenedor d-flex'>
                 <div className='btn count-btn btn-outline-primary' onClick={disminuyeContador}>-</div>
@@ -24,3 +27,4 @@ return (
     </div> 
   )
 }
+

@@ -27,7 +27,7 @@ useEffect(()=>{
         console.log(error)
       })
   }
-  
+
   categoryId ? categoryProducts() : allProducts ()
  
 },[categoryId]) 
@@ -35,8 +35,7 @@ useEffect(()=>{
   return (    
     <div className='itemListContainer col-11 card'>
         <h2>  {greeting}</h2>
-        <ItemList productos={products}/>
-      
+        <ItemList productos={products}/>      
     </div>
   )
 }

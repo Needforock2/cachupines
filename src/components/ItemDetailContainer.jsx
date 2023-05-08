@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState,} from 'react'
 import { ItemDetail } from './ItemDetail'
 import { getProductById } from '../async-mock'
 import { useParams } from 'react-router-dom'
 import './itemListContainer.css'
+import { CartContext } from '../context/cartContext'
 
 
 
@@ -20,11 +21,13 @@ useEffect(() => {
     
 },[])
 
-
+const context = useContext(CartContext)
   return (
-    <div className='itemDetailContainer col-10 d-flex flex-column'>            
-        <ItemDetail {...product} />       
-    </div>
     
-  )
+      <div className='itemDetailContainer col-10 d-flex flex-column'>                   
+        <ItemDetail {...product} />  
+            
+      </div>
+      )  
+  
 }

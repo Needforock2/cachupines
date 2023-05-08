@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './cartWidget.css'
 import './button.css'
+import { CartContext } from '../context/cartContext'
+import { NavLink } from 'react-router-dom'
+
 
 export const CartWidget = () => {
+  const {countItems} = useContext(CartContext)
+  const cantidad = countItems()
+
   return (
-    <div className='btn btn-light bckg-color-primary'>
-        <i class="bi bi-cart4"></i>
-        <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+    <NavLink to={'/cart'} className='btn btn-light bckg-color-primary'>
+        <i className="bi bi-cart4"></i>
+        <span className='badge badge-warning' id='lblCartCount'> {cantidad} </span>
         
-   </div>
+   </NavLink>
   )
 }

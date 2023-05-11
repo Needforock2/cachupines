@@ -12,6 +12,28 @@ import { CartContextProvider } from './context/CartContextProvider';
 import { CartView } from './components/CartView';
 
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB7bEHzvxJ-FWWGautL4EhhANmwBjIrAtU",
+  authDomain: "ecommerce-cachupines.firebaseapp.com",
+  projectId: "ecommerce-cachupines",
+  storageBucket: "ecommerce-cachupines.appspot.com",
+  messagingSenderId: "641415233556",
+  appId: "1:641415233556:web:32d7a3cf74006715f5a701",
+  measurementId: "G-FFEL75CKT3"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>  
@@ -19,7 +41,7 @@ root.render(
       <BrowserRouter>
           <NavBar/> 
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting={'Todos los Artículos'}/>}/>
+            <Route path='/' element={<ItemListContainer greeting={'ARTICULOS'}/>}/>
             <Route path='/products' element={<ItemListContainer greeting={'Articulos'} />}/>
             <Route path='/category/:categoryId' element={<ItemListContainer  />}/>
             <Route path='/products/:productId' element={<ItemDetailContainer />}/>

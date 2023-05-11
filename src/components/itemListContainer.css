@@ -10,6 +10,7 @@
   -webkit-box-shadow: 10px 10px 24px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 24px -7px rgba(0,0,0,0.75);
   }
+ 
 
   .itemDetailContainer{
     max-height: auto;
@@ -25,9 +26,14 @@
   -webkit-box-shadow: 10px 10px 24px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 24px -7px rgba(0,0,0,0.75);
   }
-
+.imgArticuloDetail{
+  min-width: 200px;
+  min-height: 300px;
+  
+}
   .item-detail{
     height: auto;
+    padding: 3rem;
      
   }
  
@@ -35,8 +41,15 @@
   .detail-header{
     display: flex;
   }
+  .detail-header h3{
+    font-size: 3rem;
+  }
   @media (max-width: 620px) {
     .detail-header{
       flex-direction: column;
     }
   }
+ 
+.detail-count{
+  max-width: 80%;
+}

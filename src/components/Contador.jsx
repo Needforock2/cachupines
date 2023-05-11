@@ -8,8 +8,7 @@ export const Contador = ({disminuyeContador, aumentaContador, contador}) => {
                     <div className='btn contador-btn btn-outline-primary' onClick={disminuyeContador}>-</div>
                     <h4 className='ms-2 me-2'>{contador}</h4>
                     <div className='btn contador-btn btn-outline-primary' onClick={aumentaContador}>+</div>
-                </div>
-                
+                </div>                
         </div> 
       )
     }

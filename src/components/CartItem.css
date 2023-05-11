@@ -2,7 +2,6 @@
     width:auto;
     height: 100px;
     
-    
 }
 *{
     text-align: center;
@@ -11,6 +10,13 @@
 .item-container{
     background-color: white;
 }
+
+@media (max-width: 620px) {
+    .item-container{
+      flex-direction: column;
+    }
+}
+
 h4{
     margin-bottom: 0px;
 }

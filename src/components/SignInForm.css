@@ -1,0 +1,12 @@
+.checkout-form{
+
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 1rem;
+    background-color: #F0F2F0;
+    padding: 3rem;
+    border: none;
+    box-shadow: 10px 10px 24px -7px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 24px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 24px -7px rgba(0, 0, 0, 0.75);
+}

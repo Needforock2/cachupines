@@ -2,8 +2,8 @@ import React, { useEffect, useState,} from 'react'
 import { ItemDetail } from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import './itemListContainer.css'
-import { doc, getDoc, getFirestore } from "firebase/firestore"
-import { Spinner } from 'react-bootstrap'
+import { doc, getDoc} from "firebase/firestore"
+import { db } from '../services/db'
 
 
 export const ItemDetailContainer = () => {
@@ -11,12 +11,9 @@ const [product, setProduct] = useState({})
 
 const params = useParams()
 const {productId} = params
-const db = getFirestore()
 
-useEffect(() => {    
-    /* getProductById(productId)
-    .then(productos => setProduct(productos.find(producto => producto.id===parseInt(productId))))
-    .catch(error => console.error(error)); */
+
+useEffect(() => {
     const itemDB = doc(db, 'Items', productId)
       getDoc(itemDB)
       .then( (product) => {
@@ -27,12 +24,9 @@ useEffect(() => {
     
 },[productId, db])
 
-  return (
-    
-      <div className='itemDetailContainer col-10 d-flex flex-column'>                   
-        
-        <ItemDetail {...product} /> 
-                
+  return (    
+      <div className='itemDetailContainer col-10 d-flex flex-column'>                 
+       <ItemDetail {...product} />                
       </div>
       )  
   

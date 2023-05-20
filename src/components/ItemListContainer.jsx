@@ -2,24 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { ItemList } from './ItemList'
 import './itemListContainer.css'
 import { useParams } from 'react-router-dom'
-import { getDocs, getFirestore, collection, query, where } from '@firebase/firestore'
+import { getDocs, collection, query, where } from '@firebase/firestore'
 import { Spinner } from 'react-bootstrap'
+import { db } from '../services/db'
+
 
 
 
 export const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([])
   const {categoryId} = useParams()
-  const db = getFirestore()
+
 
 
 useEffect(()=>{
   function allProducts() {
-    /* const promesa = getProducts()
-        promesa.then((productos)=> setProducts(productos)
-      ,(error)=>{
-        console.log(error)
-      }) */
       const productsDB = collection(db, 'Items')  
       getDocs(productsDB)
       .then( products => {
@@ -28,11 +25,6 @@ useEffect(()=>{
 
   }
   function categoryProducts(){
-    /* const promesa = getProducts()
-        promesa.then(productos=> setProducts(productos.filter(prods => prods.category === categoryId))
-      ,(error)=>{
-        console.log(error)
-      }) */
       const q = query(collection(db, 'Items'), where("category", "==", categoryId))
       getDocs(q)
       .then( products => {

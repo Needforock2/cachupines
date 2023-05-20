@@ -7,7 +7,7 @@ import { Card, ListGroup} from 'react-bootstrap'
 
   return (   
       <Card style={{ width: '18rem' }}>
-        <Card.Img className='imgArticulo' variant="top" src={pictureUrl} />
+        <Card.Img className='imgArticulo img-fluid' variant="top" src={pictureUrl} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <ListGroup variant="flush">

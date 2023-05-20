@@ -1,8 +1,53 @@
-# Getting Started with Create React App
+# ECOMMERCE: [Cachupines.cl](https://fanciful-dasik-8b5fb8.netlify.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="left">
+   <img src="https://img.shields.io/badge/STATUS-FINISHED-green">
+   </p>
 
-## Available Scripts
+### Index
+-[Project Description](#project-description)
+
+-[Functionalities](#functionalities)
+
+-[WebApp Deploy](#webApp-deploy)
+
+-[Used Technologies](#used-technologies)
+
+-[Install Project](#install-project)
+
+
+## Project description
+
+This is a web app developed to be adapted to any kind of ecommerce.
+It was developed as part of a bootcamp program
+
+
+## Functionalities
+User can navigate the home page where there is a product catalog.
+In the navbar there are some category filters
+Once the user selects the product, they can check the details of the product, then add it to the cart.
+Once in the cart, customer can add more articles or checkout.
+The checkout can be done after customer login or form fill out.
+The system creates a new order with an ID
+
+## WebApp deploy
+
+[Cachupines.cl](https://fanciful-dasik-8b5fb8.netlify.app/).
+
+![cachupines](https://firebasestorage.googleapis.com/v0/b/ecommerce-cachupines.appspot.com/o/cachupines1.png?alt=media&token=6b94ec4c-ce30-4f8b-9d3f-4b8e4da10af5)
+
+## Used technologies
+
+React JS (https://react.dev/) -- Javascript library for rendering 
+Javascript (https://www.javascript.com/) -- Logics
+Firebase (https://firebase.google.com/) -- Auth and Store (database)
+Bootstrap (https://getbootstrap.com/) -- Styles
+React-Toastify (https://fkhadra.github.io/react-toastify/introduction) -- Alerts
+
+
+## Install Project
+
+#### Available Scripts
 
 In the project directory, you can run:
 
@@ -45,26 +90,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

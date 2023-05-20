@@ -6,11 +6,7 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]) 
      
     const addToCart = (item, qty) =>{  
-     /*  if(isInCart(!item.id)){
-        setCartList(prev => [...prev, {...item, qty}])  
-      } else{
-        
-      }   */
+ 
       if(isInCart(item.id)){
         // Si el artículo ya está en el carrito, actualizamos la cantidad
         const index = cartList.findIndex(cartItem => cartItem.id === item.id);

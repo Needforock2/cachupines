@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../context/cartContext";
-import { UserContext } from "../context/userContext";
-import { db } from "../services/db";
+import { CartContext } from "../../context/cartContext";
+import { UserContext } from "../../context/userContext";
+import { db } from "../../services/db";
 import { collection, addDoc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import { SignInForm } from "./SignInForm";
-
+import { SignInForm } from "../SignInForm/SignInForm";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Checkout = () => {
   const { cartList, removeList, cartTotalPrice } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
   const [orderId, setOrderId] = useState(null);
   const [loading, setLoading] = useState(false);
-    const cartTotal = cartTotalPrice(cartList);
-    const ordersCollection = collection(db, "Orders");
+  const cartTotal = cartTotalPrice(cartList);
+  const ordersCollection = collection(db, "Orders");
   useEffect(() => {
     if (orderId) {
       setLoading(false);
@@ -24,10 +24,19 @@ export const Checkout = () => {
   const finishOrder = (id) => {
     setOrderId(id);
     removeList();
+    toast.success("Orden Generada Exitosamente", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const handleOrder = () => {
-    
     setLoading(true);
     const newOrderObj = {
       items: cartList,
@@ -40,9 +49,9 @@ export const Checkout = () => {
     addDoc(ordersCollection, newOrderObj)
       .then(({ id }) => finishOrder(id))
       .catch((error) => console.error(error));
-    };
-    const checkout = (formData) => {
-         setLoading(true);
+  };
+  const checkout = (formData) => {
+    setLoading(true);
     const newOrderObj = {
       items: cartList,
       userName: formData.name,
@@ -54,10 +63,22 @@ export const Checkout = () => {
     addDoc(ordersCollection, newOrderObj)
       .then(({ id }) => finishOrder(id))
       .catch((error) => console.error(error));
-    };
-    
+  };
+
   return (
     <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       {loading ? (
         <div className="checkout-msg d-flex flex-column">
           <h2>Generando Orden...</h2>
@@ -66,12 +87,8 @@ export const Checkout = () => {
       ) : !orderId ? (
         currentUser ? (
           <div className="checkout-msg d-flex flex-column">
-            <h2>
-              Realizando compra como: {currentUser.displayName}
-            </h2>
-            <h2>
-              Correo: {currentUser.email}
-            </h2>
+            <h2>Realizando compra como: {currentUser.displayName}</h2>
+            <h2>Correo: {currentUser.email}</h2>
             <Link
               className="btn btn-primary col-3 mt-1"
               onClick={handleOrder}
@@ -81,7 +98,7 @@ export const Checkout = () => {
             </Link>
           </div>
         ) : (
-          <SignInForm checkout={(formData)=>checkout(formData)} />
+          <SignInForm checkout={(formData) => checkout(formData)} />
         )
       ) : (
         <div className="checkout-msg d-flex flex-column">
@@ -89,11 +106,7 @@ export const Checkout = () => {
           <h2>
             Orden finalizada con el Id: <strong> {orderId}</strong>
           </h2>
-          <Link
-            className="btn btn-outline-primary col-3 mt-1"
-          
-            to={"/"}
-          >
+          <Link className="btn btn-outline-primary col-3 mt-1" to={"/"}>
             Volver a la Tienda
           </Link>
         </div>

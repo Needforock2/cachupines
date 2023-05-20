@@ -4,7 +4,7 @@ import './itemListContainer.css'
 import { useParams } from 'react-router-dom'
 import { getDocs, collection, query, where } from '@firebase/firestore'
 import { Spinner } from 'react-bootstrap'
-import { db } from '../services/db'
+import { db } from '../../services/db'
 
 
 
@@ -34,7 +34,7 @@ useEffect(()=>{
 
   categoryId ? categoryProducts() : allProducts ()
  
-},[categoryId, db]) 
+},[categoryId]) 
 
   return (    
     <div className='itemListContainer col-11 card'>

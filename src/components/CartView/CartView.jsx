@@ -1,16 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../context/cartContext";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 import "./CartView.css";
-import { CartItem } from "./CartItem";
+import { CartItem } from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
-import { Button} from "react-bootstrap";
-
-
+import { Button } from "react-bootstrap";
 
 export const CartView = () => {
   const { cartList, deleteItem, cartTotalPrice, removeList, countItems } =
     useContext(CartContext);
-
 
   const eraseItem = (id) => {
     deleteItem(id);
@@ -20,16 +17,8 @@ export const CartView = () => {
   const envio = precioTotal * 0.1;
   const bruto = precioTotal + envio;
 
-  
-
   return (
     <>
-      {/*  {loading ? (
-        <div className="checkout-msg d-flex flex-column">
-          <h2>Generando Orden...</h2>
-          <Spinner animation="grow" />
-        </div>
-      ) : !orderId ? ( */}
       <div className="d-flex flex-row  justify-content-evenly cart-view-container">
         <div className="cartContainer col-7 card">
           {cartList.length > 0 ? (
@@ -62,7 +51,7 @@ export const CartView = () => {
               <div className="cart-header-no-border ">
                 <img
                   className="img-fluid"
-                  src={require("./../assets/icons/empty-cart.png")}
+                  src={require("./../../assets/icons/empty-cart.png")}
                   alt="lskdf"
                 />
                 <h2>No hay Artículos en el carrito</h2>
@@ -102,14 +91,6 @@ export const CartView = () => {
           ) : null}
         </div>
       </div>
-      {/*    ) : (
-        <div className="checkout-msg d-flex flex-column">
-          <h2>Muchas gracias por tu compra</h2>
-          <h2>
-            Orden finalizada con el Id: <strong> {orderId}</strong>
-          </h2>
-        </div>
-      )} */}
     </>
   );
 };

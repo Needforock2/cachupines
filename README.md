@@ -23,12 +23,7 @@ It was developed as part of a bootcamp program
 
 
 ## Functionalities
-User can navigate the home page where there is a product catalog.
-In the navbar there are some category filters
-Once the user selects the product, they can check the details of the product, then add it to the cart.
-Once in the cart, customer can add more articles or checkout.
-The checkout can be done after customer login or form fill out.
-The system creates a new order with an ID
+User can navigate the home page where there is a product catalog. <br/> In the navbar there are some category filters <br/> Once the user selects the product, they can check the details of the product, then add it to the cart. <br/> Once in the cart, customer can add more articles or checkout. <br/> The checkout can be done after customer login or form fill out. <br/> The system creates a new order with an ID once user details are confirmed
 
 ## WebApp deploy
 
@@ -38,11 +33,11 @@ The system creates a new order with an ID
 
 ## Used technologies
 
-React JS (https://react.dev/) -- Javascript library for rendering 
-Javascript (https://www.javascript.com/) -- Logics
-Firebase (https://firebase.google.com/) -- Auth and Store (database)
-Bootstrap (https://getbootstrap.com/) -- Styles
-React-Toastify (https://fkhadra.github.io/react-toastify/introduction) -- Alerts
+React JS (https://react.dev/) -- Javascript library for rendering <br/>
+Javascript (https://www.javascript.com/) -- Logics <br/>
+Firebase (https://firebase.google.com/) -- Auth and Store (database)<br/>
+Bootstrap (https://getbootstrap.com/) -- Styles<br/>
+React-Toastify (https://fkhadra.github.io/react-toastify/introduction) -- Alerts<br/>
 
 
 ## Install Project
